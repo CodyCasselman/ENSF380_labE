@@ -37,8 +37,13 @@ public class ToDoList implements IToDoList{
     }
 
     @Override
-    public void completeTask(String id){
-
+    public void completeTask(String index){
+        for (Task task : tasks){
+            if (index.equals(task.getId())){
+                task.setIsCompleted(true);
+            }
+        }
+        pushHistory();
     }
 
     @Override
