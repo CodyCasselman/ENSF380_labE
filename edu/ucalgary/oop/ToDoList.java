@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ToDoList implements IToDoList{
     private List<Task> tasks = new ArrayList<Task>();
-    private Stack<List<Task>> history;
+    private Stack<List<Task>> history = new Stack<List<Task>>();
 
     private void pushHistory()
     {
