@@ -11,11 +11,6 @@ public class ToDoList implements IToDoList{
         history.push(tasks);
     }
 
-    private void popHistory()
-    {
-        history.pop();
-    }
-
     @Override
     public void editTask(String taskId, String title, boolean isCompleted) {
         pushHistory();
@@ -66,8 +61,7 @@ public class ToDoList implements IToDoList{
     @Override
     public void undo()
     {
-        popHistory();
-        tasks = history.peek();
+        tasks = history.pop();
     }
 
 }
