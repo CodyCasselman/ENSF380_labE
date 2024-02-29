@@ -8,7 +8,11 @@ public class ToDoList implements IToDoList{
 
     private void pushHistory()
     {
-        history.push(tasks);
+        List<Task> temp = new ArrayList<Task>();
+        for (Task task : tasks) {
+            temp.add(task.copy());
+        }
+        history.push(temp);
     }
 
     @Override
