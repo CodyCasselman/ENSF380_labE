@@ -15,6 +15,25 @@ public class Task {
         this.title = title;
         this.isCompleted = isCompleted;
     }
+  // setters and getters 
+  public String getId () {
+    return id;
+    }
+  public void setId (String id){
+    this.id = id;
+    }
+  public String getTitle () {
+    return title;
+    }
+  public void setTtitle (String title){
+    this.title = title;
+    }
+  public boolean getIsCompleted () {
+    return isCompleted;
+    }
+  public void setIsCompleated (boolean isCompleted) {
+    this.isCompleted = isCompleted;
+    }
 
     // defualt constructor
     public Task ()
