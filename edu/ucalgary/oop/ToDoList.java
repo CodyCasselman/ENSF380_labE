@@ -32,17 +32,23 @@ public class ToDoList implements IToDoList{
 
     @Override
     public void addTask(Task task){
+        this.tasks.add(task);
+        pushHistory();
+    }
+
+    @Override
+    public void completeTask(String id){
 
     }
 
     @Override
-    public void completeTask(String taskId){
-
-    }
-
-    @Override
-    public void deleteTask(){
-
+    public void deleteTask(String id){
+        for(Task task : tasks){
+            if(task.getId().equals(id)) {
+                tasks.remove(task);
+            }
+        }
+        pushHistory();
     }
 
     @Override
