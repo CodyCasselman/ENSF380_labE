@@ -18,6 +18,7 @@ public class ToDoList implements IToDoList{
 
     @Override
     public void editTask(String taskId, String title, boolean isCompleted) {
+        pushHistory();
         for (Task task : tasks) {
             if(task.getId().equals(taskId))
             {
@@ -27,27 +28,27 @@ public class ToDoList implements IToDoList{
             }
         }
 
-        pushHistory();
     }
 
     @Override
     public void addTask(Task task){
-        this.tasks.add(task);
         pushHistory();
+        this.tasks.add(task);
     }
 
     @Override
     public void completeTask(String index){
+        pushHistory();
         for (Task task : tasks){
             if (index.equals(task.getId())){
                 task.setIsCompleted(true);
             }
         }
-        pushHistory();
     }
 
     @Override
     public void deleteTask(String id){
+        pushHistory();
         for(int i = 0; i < tasks.size(); i++)
         {
             if(tasks.get(i).getId().equals(id))
@@ -55,7 +56,6 @@ public class ToDoList implements IToDoList{
                 tasks.remove(i);
             }
         }
-        pushHistory();
     }
 
     @Override
@@ -67,12 +67,7 @@ public class ToDoList implements IToDoList{
     public void undo()
     {
         popHistory();
-        if(!history.empty())
-            tasks = history.peek();
-        else 
-        {
-            tasks = new ArrayList<Task>();
-        }
+        tasks = history.peek();
     }
 
 }
