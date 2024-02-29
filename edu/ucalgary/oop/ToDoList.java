@@ -48,9 +48,11 @@ public class ToDoList implements IToDoList{
 
     @Override
     public void deleteTask(String id){
-        for(Task task : tasks){
-            if(task.getId().equals(id)) {
-                tasks.remove(task);
+        for(int i = 0; i < tasks.size(); i++)
+        {
+            if(tasks.get(i).getId().equals(id))
+            {
+                tasks.remove(i);
             }
         }
         pushHistory();
