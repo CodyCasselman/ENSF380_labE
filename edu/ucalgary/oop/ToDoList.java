@@ -12,4 +12,17 @@ public class ToDoList implements IToDoList{
     public void editTask(Task task) {
         
     }
+    @Override
+    public void addTask(Task task){
+
+    }
+
+    @Override
+    public void completeTask(Task task){
+
+    }
+    public void deleteTask(Task task){
+
+    }
+
 }
