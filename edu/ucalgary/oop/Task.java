@@ -3,6 +3,31 @@ package edu.ucalgary.oop;
 import java.util.Objects;
 
 public class Task {
+     
+    // class attributes 
+    private String id;
+    private String title;
+    private boolean isCompleted;
+
+    // parametrized constructor
+    public Task (String id, String title, boolean isCompleted ){
+        this.id = id;
+        this.title = title;
+        this.isCompleted = isCompleted;
+    }
+
+    // defualt constructor
+    public Task ()
+    {
+
+    }
+
+    //copy method - deep copying task objects
+    // deep copy ensures independence between original object and new object
+    public Task copy () {
+        Task copiedTask = new Task (this.id, this.title, this.isCompleted); // this keyword refers to current object instance
+        return copiedTask; 
+    }
 
     @Override
     public boolean equals(Object obj) {
