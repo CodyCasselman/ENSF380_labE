@@ -25,13 +25,13 @@ public class Task {
   public String getTitle () {
     return title;
     }
-  public void setTtitle (String title){
+  public void setTitle (String title){
     this.title = title;
     }
   public boolean getIsCompleted () {
     return isCompleted;
     }
-  public void setIsCompleated (boolean isCompleted) {
+  public void setIsCompleted (boolean isCompleted) {
     this.isCompleted = isCompleted;
     }
 
