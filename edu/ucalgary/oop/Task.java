@@ -28,8 +28,8 @@ public class Task {
   public void setTitle (String title){
     this.title = title;
     }
-  public boolean getIsCompleted () {
-    return isCompleted;
+    public boolean isCompleted() {
+        return isCompleted;
     }
   public void setIsCompleted (boolean isCompleted) {
     this.isCompleted = isCompleted;
@@ -40,6 +40,12 @@ public class Task {
     {
 
     }
+    // constructor for two strings
+    public Task(String id, String title) {
+        this(id, title, false); // Call the existing constructor with the provided id, title, and false for isCompleted
+    }
+
+   
 
     //copy method - deep copying task objects
     // deep copy ensures independence between original object and new object
