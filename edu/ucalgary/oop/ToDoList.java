@@ -65,7 +65,12 @@ public class ToDoList implements IToDoList{
     public void undo()
     {
         popHistory();
-        tasks = history.peek();
+        if(!history.empty())
+            tasks = history.peek();
+        else 
+        {
+            tasks = new ArrayList<Task>();
+        }
     }
 
 }
