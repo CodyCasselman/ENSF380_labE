@@ -19,9 +19,19 @@ public class ToDoList implements IToDoList{
     }
 
     @Override
-    public void editTask(String taskId, String taskName, Boolean isCompleted) {
-        
+    public void editTask(String taskId, String title, Boolean isCompleted) {
+        for (Task task : tasks) {
+            if(task.getId() == taskId)
+            {
+                task.setId(taskId);
+                task.setTitle(title);
+                task.setCompleted(isCompleted);
+            }
+        }
+
+        pushHistory();
     }
+
     @Override
     public void addTask(Task task){
 
@@ -31,8 +41,15 @@ public class ToDoList implements IToDoList{
     public void completeTask(Task task){
 
     }
+
+    @Override
     public void deleteTask(Task task){
 
+    }
+
+    @Override
+    public List<Task> listTasks() {
+        return tasks;
     }
 
 }
